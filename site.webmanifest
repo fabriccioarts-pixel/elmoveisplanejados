@@ -1,0 +1,16 @@
+{
+  "name": "EL Móveis Planejados",
+  "short_name": "EL Móveis",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F2EC",
+  "theme_color": "#1c1a17",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
