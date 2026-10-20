@@ -229,6 +229,33 @@ address{font-style:normal}
 @media (min-width:1024px){.info--row{grid-template-columns:repeat(2,auto);justify-content:start;gap:var(--s5) var(--s9)}}
 @media (min-width:1280px){.info--row{grid-template-columns:repeat(4,auto);gap:var(--s8)}}
 
+.see-also{font-size:var(--t-sm);color:var(--muted);max-width:72ch}
+.see-also a{color:var(--ink)}
+
+/* ---------- guias ---------- */
+.article{padding:clamp(48px,7vw,112px) 0 clamp(80px,11vw,176px)}
+.article__head h1{font-size:var(--t-h2);max-width:20ch}
+.article__lead{font-size:var(--t-lead);line-height:1.5;max-width:52ch;margin-top:var(--s5)}
+.article__meta{color:var(--muted);font-size:var(--t-sm);margin-top:var(--s4)}
+.article__body{max-width:68ch;margin-top:var(--s8)}
+.article__body section{padding:var(--s7) 0;border-top:1px solid var(--line)}
+.article__body h2{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);letter-spacing:-.02em;margin-bottom:var(--s4)}
+.article__body h3{font-size:1.25rem;font-weight:400;letter-spacing:-.01em;margin:var(--s6) 0 var(--s2)}
+.article__body h2+h3{margin-top:var(--s4)}
+.article__body p+p,.article__body p+ul,.article__body ul+p,.article__body ol+p{margin-top:var(--s3)}
+.article__body ul{list-style:disc;padding-left:1.25em}
+.article__body ol{list-style:decimal;padding-left:1.25em}
+.article__body li+li{margin-top:var(--s2)}
+.article__body li::marker{color:var(--muted)}
+.article__body strong{color:var(--ink);font-weight:500}
+.article__body a:not(.btn){color:var(--ink)}
+.article__fig{margin:var(--s6) 0;background:var(--stone)}
+.article__fig img{width:100%}
+.article__fig--tall{max-width:420px}
+.article__fig figcaption{font-size:var(--t-label);color:var(--muted);padding-top:var(--s3);background:var(--white)}
+.article__cta{margin-top:var(--s6)}
+.article__more{margin-top:var(--s5)!important;font-size:var(--t-sm);color:var(--muted)}
+
 /* ---------- rodapé ---------- */
 .footer{background:var(--ink);color:#A29E97;border-top:1px solid #2E2C29;padding:var(--s7) 0 calc(var(--s7) + 72px);font-size:var(--t-label);line-height:1.7}
 .footer__in{display:grid;gap:var(--s6)}
