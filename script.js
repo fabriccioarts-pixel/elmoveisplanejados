@@ -1,6 +1,7 @@
 (() => {
   const WHATSAPP = '5561986388108';
-  const MSG = 'Olá! Vim pelo site e gostaria de um orçamento de móveis planejados.';
+  // páginas de ambiente definem a própria mensagem em <body data-wa-msg>
+  const MSG = document.body.dataset.waMsg || 'Olá! Vim pelo site e gostaria de um orçamento de móveis planejados.';
   const waUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MSG)}`;
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
