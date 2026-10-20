@@ -223,7 +223,8 @@ address{font-style:normal}
 /* ---------- páginas de ambiente ---------- */
 .amb-hero{padding-bottom:clamp(48px,6vw,96px)}
 .intro--flush{padding-top:0}
-@media (min-width:1024px){.info--row{grid-template-columns:repeat(3,auto);justify-content:start;gap:var(--s9)}}
+@media (min-width:1024px){.info--row{grid-template-columns:repeat(2,auto);justify-content:start;gap:var(--s5) var(--s9)}}
+@media (min-width:1280px){.info--row{grid-template-columns:repeat(4,auto);gap:var(--s8)}}
 
 /* ---------- rodapé ---------- */
 .footer{background:var(--ink);color:#A29E97;border-top:1px solid #2E2C29;padding:var(--s7) 0 calc(var(--s7) + 72px);font-size:var(--t-label);line-height:1.7}
