@@ -25,6 +25,8 @@
   burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
   nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); burger.focus(); } });
+  // girar o tablet ou alargar a janela com o menu aberto: volta ao nav de desktop
+  matchMedia('(min-width:1024px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 
   // filtro de projetos
   const filters = $$('.f'), items = $$('.g'), status = $('#filtro-status');
