@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/avaliar",
+      "destination": "https://search.google.com/local/writereview?placeid=ChIJxSDBg5CIBQwRGJ01WCjDI6c",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(img|fonts)/(.*)",

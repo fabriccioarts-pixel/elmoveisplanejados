@@ -255,6 +255,14 @@ address{font-style:normal}
 .article__fig figcaption{font-size:var(--t-label);color:var(--muted);padding-top:var(--s3);background:var(--white)}
 .article__cta{margin-top:var(--s6)}
 .article__more{margin-top:var(--s5)!important;font-size:var(--t-sm);color:var(--muted)}
+.article__table{overflow-x:auto;margin-top:var(--s4)}
+.article__table table{width:100%;border-collapse:collapse;font-size:var(--t-sm);hyphens:auto}
+.article__table th,.article__table td{text-align:left;vertical-align:top;padding:var(--s3) var(--s3) var(--s3) 0;border-bottom:1px solid var(--line)}
+.article__table tbody th{width:28%}
+@media (max-width:479px){.article__table table{font-size:.8125rem;line-height:1.45}.article__table th,.article__table td{padding-right:var(--s2)}}
+.article__table thead th{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.article__table tbody th{font-weight:500;color:var(--ink)}
+.article__see{max-width:68ch;margin-top:var(--s7);padding-top:var(--s5);border-top:1px solid var(--line)}
 
 /* ---------- rodapé ---------- */
 .footer{background:var(--ink);color:#A29E97;border-top:1px solid #2E2C29;padding:var(--s7) 0 calc(var(--s7) + 72px);font-size:var(--t-label);line-height:1.7}

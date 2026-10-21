@@ -5,13 +5,28 @@
   const read = () => { try { return JSON.parse(localStorage.getItem(KEY)); } catch { return null; } };
   const save = status => { try { localStorage.setItem(KEY, JSON.stringify({ status, at: new Date().toISOString() })); } catch {} };
 
-  // Ponto único para scripts de terceiros. Para ativar Google Analytics ou Meta Pixel,
-  // carregue os scripts aqui: eles só rodam depois que o visitante aceitar.
+  // ID de medição do GA4 (G-XXXXXXXXXX). Vazio = Analytics desligado.
+  const GA_ID = '';
+
+  const loadAnalytics = () => {
+    if (!GA_ID || window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+  };
+
+  // Ponto único para scripts de terceiros: só rodam depois que o visitante aceitar.
   const loadThirdParty = () => {
     const frame = document.getElementById('map-frame');
     const gate = document.getElementById('map-gate');
     if (frame && !frame.src) { frame.src = frame.dataset.src; frame.hidden = false; }
     if (gate) gate.hidden = true;
+    loadAnalytics();
   };
 
   const showBanner = (focus = false) => {

@@ -9,6 +9,19 @@
   $('#ano').textContent = new Date().getFullYear();
   $$('[data-wa]').forEach(a => { a.href = waUrl; a.target = '_blank'; a.rel = 'noopener'; });
 
+  // cliques em WhatsApp e telefone viram eventos no GA4 (só existe gtag se o visitante aceitou cookies)
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[data-wa], a[href^="tel:"]');
+    if (!a || typeof window.gtag !== 'function') return;
+    const sec = a.closest('section, header, footer');
+    const local = a.classList.contains('fab') ? 'botao-flutuante'
+      : !sec ? 'pagina'
+      : sec.matches('header') ? 'menu'
+      : sec.matches('footer') ? 'rodape'
+      : sec.id || sec.classList[0] || 'conteudo';
+    window.gtag('event', a.matches('[data-wa]') ? 'whatsapp_click' : 'telefone_click', { pagina: location.pathname, local });
+  });
+
   // borda do header ao rolar
   const header = $('.header');
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
