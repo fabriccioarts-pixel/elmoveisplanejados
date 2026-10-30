@@ -226,6 +226,8 @@ address{font-style:normal}
 /* ---------- páginas de ambiente ---------- */
 .amb-hero{padding-bottom:clamp(48px,6vw,96px)}
 .intro--flush{padding-top:0}
+.article--flush{padding:0}
+.article--flush .article__body{margin-top:0}
 @media (min-width:1024px){.info--row{grid-template-columns:repeat(2,auto);justify-content:start;gap:var(--s5) var(--s9)}}
 @media (min-width:1280px){.info--row{grid-template-columns:repeat(4,auto);gap:var(--s8)}}
 
